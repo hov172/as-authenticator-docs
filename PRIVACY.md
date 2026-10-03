@@ -25,6 +25,12 @@ account system.
   your other browsers signed in to the same account. Only ciphertext travels; your password and settings do not. Turning the option off removes the copy.
 - If you turn on "Check the clock" (off by default), the extension requests the current time from timeapi.io about once
   an hour. The request carries your IP address and the extension's identity and nothing else.
+- Account icons: when an account has no icon of its own and no bundled brand mark matches, the popup shows the
+  site's icon. In Chrome and Edge it first asks the browser's local favicon cache, which never contacts the web. When
+  that has nothing, and always in Firefox and Safari, it loads `https://<site>/favicon.ico` from the account's own
+  site (and, failing that, from the site's parent domain) as an ordinary image request. That site learns only what any
+  page load tells it: your IP address and that an icon was requested. No third-party icon service is used, and the
+  request happens only while the popup is open.
 - Exported backup files are written where you choose and stay encrypted under your master password.
 
 ## What the extension reads on web pages
@@ -32,7 +38,7 @@ account system.
 Only when you act, and only on the page you are on: when you choose to scan a QR code from the page, it captures the
 visible tab or the region you drag to decode the code; when you choose to fill a code, it writes the code into the
 login field on that page. It does not run on pages otherwise, has no access to other tabs, and keeps no browsing
-history. In Chrome and Edge, account icons may be looked up in the browser's local favicon cache, which never contacts the web.
+history. Account icons are described above under "What leaves your device".
 
 ## Your choices
 
@@ -43,4 +49,4 @@ stored on the device. Browser sync data, if enabled, is removed when the option 
 
 ayala.solutions@gmail.com. Security reports: see SECURITY.md in the repository.
 
-Last updated: 2026-10-01 (Firefox, Safari and Edge, languages).
+Last updated: 2026-10-03 (account icons may be fetched from the account's own site).

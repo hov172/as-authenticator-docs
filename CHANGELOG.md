@@ -7,6 +7,7 @@
 - Open, owner action: the store secrets need protected GitHub environments (OF-001 in the report).
 
 ### Changed
+- Account icons: when no bundled brand mark matches and the browser's favicon cache has nothing (Firefox and Safari have no such cache), the popup now loads the site's own `favicon.ico` over HTTPS, from the account's host and then its registrable domain. Until now those browsers only ever showed a letter. This is the first time the extension contacts a site on its own; the request goes to the account's own site only, never to an icon service, and PRIVACY.md describes it.
 - Category validation errors are localized.
 
 ## 0.14.1 — 2026-10-02
