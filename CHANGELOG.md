@@ -1,13 +1,15 @@
 # Changelog
 
-## Unreleased
+## 0.14.2 — 2026-10-03
+
+Submitted to the Mac App Store on 2026-10-03 as build 19 (the 0.14.1 submission had been rejected; the version was renamed and resubmitted), and to addons.mozilla.org as listed version 0.14.2 (id 6537058) through the publish workflow, whose action pins had to be corrected first. Chrome Web Store: by hand after the 0.14.1 review clears.
 
 ### Security
 - Twelfth review pass (see the audit report, revision 2.6). Publishing: a secret-free job now rebuilds the tag and refuses to continue unless the release zips are byte-identical to that build; the tag name is validated; the Chrome job picks its zip by name instead of matching the Safari package too. Build: timestamps and sort order are pinned so a Mac build matches CI byte for byte. Background: a new category is re-validated (name 1 to 64 characters, known icon) and rebuilt from allowed fields. Popup: the clipboard-clearing setting says it is best-effort in Firefox and Safari.
 - Open, owner action: the store secrets need protected GitHub environments (OF-001 in the report).
 
 ### Changed
-- Account icons: when no bundled brand mark matches and the browser's favicon cache has nothing (Firefox and Safari have no such cache), the popup now loads the site's own `favicon.ico` over HTTPS, from the account's host and then its registrable domain. Until now those browsers only ever showed a letter. This is the first time the extension contacts a site on its own; the request goes to the account's own site only, never to an icon service, and PRIVACY.md describes it.
+- Account icons: when no bundled brand mark matches, the popup now loads the site's own `favicon.ico` over HTTPS, from the account's host and then its registrable domain, the same in every browser. Firefox and Safari only ever showed a letter before; Chrome showed whatever its cache held for the page (an OWA host gave Outlook's icon), and the cache is now only the last resort. This is the first time the extension contacts a site on its own; the request goes to the account's own site only, never to an icon service, and PRIVACY.md describes it.
 - Category validation errors are localized.
 
 ## 0.14.1 — 2026-10-02
