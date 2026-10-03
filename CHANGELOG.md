@@ -2,7 +2,7 @@
 
 ## 0.14.2 — 2026-10-03
 
-Submitted to the Mac App Store on 2026-10-03 as build 19 (the 0.14.1 submission had been rejected; the version was renamed and resubmitted), and to addons.mozilla.org as listed version 0.14.2 (id 6537058) through the publish workflow, whose action pins had to be corrected first. Chrome Web Store: by hand after the 0.14.1 review clears.
+Submitted to the Mac App Store on 2026-10-03 as build 19 (the 0.14.1 submission had been rejected; the version was renamed and resubmitted), and to addons.mozilla.org as listed version 0.14.2 (id 6537058) through the publish workflow, whose action pins had to be corrected first. Chrome Web Store: by hand after the 0.14.1 review clears. Apple's 0.14.1 rejection was Guideline 2.1, "unable to locate extension in Safari"; build 20 replaces build 19 with a container-app window that lists the three steps (open Safari Settings, tick the extension, click the toolbar icon) instead of the converter's one-line hint, and the review notes spell out the same steps with a test secret.
 
 ### Security
 - Twelfth review pass (see the audit report, revision 2.6). Publishing: a secret-free job now rebuilds the tag and refuses to continue unless the release zips are byte-identical to that build; the tag name is validated; the Chrome job picks its zip by name instead of matching the Safari package too. Build: timestamps and sort order are pinned so a Mac build matches CI byte for byte. Background: a new category is re-validated (name 1 to 64 characters, known icon) and rebuilt from allowed fields. Popup: the clipboard-clearing setting says it is best-effort in Firefox and Safari.
