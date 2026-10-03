@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+### Security
+- Twelfth review pass (see the audit report, revision 2.6). Publishing: a secret-free job now rebuilds the tag and refuses to continue unless the release zips are byte-identical to that build; the tag name is validated; the Chrome job picks its zip by name instead of matching the Safari package too. Build: timestamps and sort order are pinned so a Mac build matches CI byte for byte. Background: a new category is re-validated (name 1 to 64 characters, known icon) and rebuilt from allowed fields. Popup: the clipboard-clearing setting says it is best-effort in Firefox and Safari.
+- Open, owner action: the store secrets need protected GitHub environments (OF-001 in the report).
+
+### Changed
+- Category validation errors are localized.
+
 ## 0.14.1 — 2026-10-02
 
 Submitted to the Mac App Store on 2026-10-02 as build 17 (replacing the 0.14.0 submission), to addons.mozilla.org as listed version 0.14.1 with the source archive, and uploaded to the Chrome Web Store by hand.

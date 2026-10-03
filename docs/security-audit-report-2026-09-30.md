@@ -1085,7 +1085,9 @@ enc: (u8) => { let s = ''; for (let i = 0; i < u8.length; i += CHUNK) s += Strin
 
 ## Open Findings
 
-No open findings at time of report.
+| ID | Finding | Severity | Owner action |
+|---|---|---|---|
+| OF-001 | The store credentials (`AMO_JWT_*`, and `CWS_*` once created) are repository secrets, and the `firefox-add-ons` and `chrome-web-store` environments carry no protection rules or branch policy. Anyone with write access, or a stolen collaborator token, can run a workflow on any branch that reads the secrets and publishes a package. Found in pass 12. | Medium | In the repository settings: create both environments with a required reviewer and "Deployment branches: selected" limited to `main` and `v*` tags; move each secret into its environment and delete the repository-level copy. The workflow already names the environments, so no code change is needed. Until then, every publish run should be started by the owner alone. |
 
 ---
 
@@ -1175,6 +1177,7 @@ git log --all --name-only | grep -iE '\.env|\.pem|\.key|credentials'
 | 1.7 | 2026-10-01 | Claude Code with Ayala Solutions | Seventh review pass on 0.8.0: PBKDF2 backups surviving the Argon2id upgrade (Medium), symbols-only hint bypass, lookalike-host shortcut fill, and non-integer indices, all fixed before release |
 | 1.8 | 2026-10-01 | Claude Code with Ayala Solutions | AR-015 added: brand icons and the favicon-cache fallback introduced in 0.9.0 |
 | 1.9 | 2026-10-01 | Claude Code with Ayala Solutions | Eighth review pass on 0.9.0: nothing above Low; two-level-suffix shortcut matching tightened in 0.9.1, AR-016 added |
+| 2.6 | 2026-10-03 | Claude Code with Ayala Solutions | Twelfth review pass on 0.14.0 and 0.14.1 (per-browser packaging and derived manifests, the i18n move, the cloud-backup add-and-remove, the publish workflows, the category change): nothing above Medium. Two Mediums in the publish surface: release assets were trusted on a same-release hash only (fixed: a secret-free job rebuilds the tag and the zips must match byte for byte before any store job runs; the tag name is validated; `--proto =https`) and unprotected environment secrets (OF-001, owner action). Lows fixed: the Chrome job matched two zips once the Safari package existed; the reproducible build differed off UTC Linux (`touch` zone and `sort` collation now pinned; a Mac build of v0.14.1 is byte-identical to CI's); `addCategory` now re-validates name length and icon at the background boundary and rebuilds the object from allowed fields; the clipboard-clearing setting now says it is best-effort in Firefox and Safari, where the write comes from the background page; `build/` ignored. Clean: no injection sink in the i18n path (text-only setters, no HTML entities in any locale), manifests only remove permissions and keep the CSP, no cloud-backup remnant, no committed credential, secrets never reach workflow logs, actions pinned to verified commits. |
 | 2.5 | 2026-10-01 | Claude Code with Ayala Solutions | Adversarial design review (Codex) of the whole day's work: two Highs reproduced and fixed in 0.13.2, an old-password browser overwriting a re-keyed synced vault, and a stored site not being authoritative for the shortcut |
 | 2.4 | 2026-10-01 | Claude Code with Ayala Solutions | Eleventh review pass on 0.13.0: five Mediums and three Lows in sync (timestamp-trusting rollback, unauthenticated recovery envelope, fresh-browser overwrite, password divergence, swallowed push failures, setting-before-push, adoption off the write queue, wording), all fixed in 0.13.1; icons and Steam verified sound |
 | 2.3 | 2026-10-01 | Claude Code with Ayala Solutions | 0.13.0: opt-in Chrome sync of the encrypted envelope (AR-019), custom icons (AR-020), Steam Guard |
