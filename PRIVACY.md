@@ -20,9 +20,9 @@ does with data. In short: everything stays on your device, and the developer rec
 Nothing is sent to the developer or to any server operated by the developer. The extension has no analytics and no
 account system.
 
-- If you turn on "Sync across your Chrome browsers" (off by default), the encrypted vault and recovery envelope are
-  copied to Chrome's own sync storage, which Google stores and delivers to your other browsers signed in to the same
-  Google account. Only ciphertext travels; your password and settings do not. Turning the option off removes the copy.
+- If you turn on "Sync across your browsers" (off by default), the encrypted vault and recovery envelope are
+  copied to the browser's own sync storage (Chrome sync or Firefox Sync), which its vendor stores and delivers to
+  your other browsers signed in to the same account. Only ciphertext travels; your password and settings do not. Turning the option off removes the copy.
 - If you turn on "Check the clock" (off by default), the extension requests the current time from timeapi.io about once
   an hour. The request carries your IP address and the extension's identity and nothing else.
 - Exported backup files are written where you choose and stay encrypted under your master password.
@@ -32,15 +32,15 @@ account system.
 Only when you act, and only on the page you are on: when you choose to scan a QR code from the page, it captures the
 visible tab or the region you drag to decode the code; when you choose to fill a code, it writes the code into the
 login field on that page. It does not run on pages otherwise, has no access to other tabs, and keeps no browsing
-history. Account icons may be looked up in Chrome's local favicon cache, which never contacts the web.
+history. In Chrome and Edge, account icons may be looked up in the browser's local favicon cache, which never contacts the web.
 
 ## Your choices
 
 You can export, delete or reset the vault at any time from the extension. Removing the extension deletes everything it
-stored on the device. Chrome sync data, if enabled, is removed when the option is turned off or the extension is reset.
+stored on the device. Browser sync data, if enabled, is removed when the option is turned off or the extension is reset.
 
 ## Contact
 
 ayala.solutions@gmail.com. Security reports: see SECURITY.md in the repository.
 
-Last updated: 2026-10-01.
+Last updated: 2026-10-01 (Firefox, Safari and Edge, languages).

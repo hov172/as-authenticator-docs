@@ -1,6 +1,6 @@
 # AS Authenticator
 
-Two-factor codes, encrypted, in your browser. A Chrome extension by Ayala Solutions.
+Two-factor codes, encrypted, in your browser. A browser extension by Ayala Solutions for Chrome, Edge, Brave, Firefox and Safari, in English, Spanish, French, German and Brazilian Portuguese.
 
 This repository holds the public documents for AS Authenticator: the privacy policy, the security policy, the vault
 format, the security audit report and the changelog. The extension's source is maintained privately; every release
@@ -21,8 +21,13 @@ ships with a SHA-256 for each packaged file, listed in the changelog's release n
   to the developer; there is no account and no server. See [PRIVACY.md](PRIVACY.md).
 - Auto-lock, lock on screen lock, lock when idle, hidden codes, clipboard cleared after a copy.
 - A recovery code for a forgotten password, automatic local backups, encrypted export.
-- Optional, off by default: sync between your own Chrome browsers through Chrome sync, ciphertext only.
+- Optional, off by default: sync between your own browsers through Chrome sync or Firefox Sync, ciphertext only.
 - Permissions are the minimum for those features: no host permissions, no content scripts, no remote code, no analytics.
+
+## Where to get it
+
+Version 0.14.1 was submitted on 2026-10-02 to the Chrome Web Store (also for Edge and Brave), to addons.mozilla.org for
+Firefox and to the Mac App Store for Safari, and is under review at each. Links appear here once the listings are live.
 
 ## Documents
 

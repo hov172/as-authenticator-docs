@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.14.1 — 2026-10-02
+
+Submitted to the Mac App Store on 2026-10-02 as build 17 (replacing the 0.14.0 submission), to addons.mozilla.org as listed version 0.14.1 with the source archive, and uploaded to the Chrome Web Store by hand.
+
+### Fixed
+- Categories: picking an icon and pressing + with no name typed used to do nothing, since the name field was required. A category now takes the icon's label as its name when the field is left blank; the placeholder says so. Typed names still win.
+
+## 0.14.0 — 2026-10-01
+
+Submitted to the Mac App Store on 2026-10-02 as build 16 (Safari package, with the composited store icon), signed with Apple Distribution and reviewed from App Store Connect app 6818379710. Submitted to addons.mozilla.org on 2026-10-02 as a listed add-on with the source archive. Chrome Web Store 0.13.2 remains pending review; 0.14.0 not yet uploaded there.
+
+### Added
+- Firefox: the build now also produces `as-authenticator-<version>-firefox.zip` with a manifest derived from the Chrome one (event page, no `offscreen` or `favicon`, gecko id). The clipboard is cleared from the event page and icons fall back to brand marks and letters where Firefox has no favicon cache. Linted with Mozilla's `web-ext`; not covered by the Chrome e2e suite.
+- Edge and Brave: documented as the same Chromium package; no code change needed.
+- Safari: the build also produces `-safari.zip` with a background page and a manifest without `offscreen`, `favicon` and `idle`, for Xcode's `safari-web-extension-converter`, which `tools/safari-xcode.sh` runs and then fixes the app bundle id the converter gets wrong. The worker guards the idle and clipboard APIs, and the popup hides the idle setting where the manifest lacks it. Converted with Xcode locally; not run through the e2e suite.
+- Languages: every UI string moved to `_locales` (English, Spanish, French, German, Brazilian Portuguese). The manifest description and command names are localized too. A unit test checks that every key the code uses exists and that every language matches the English key set and placeholders.
+
+### Changed
+- Settings copy no longer names Chrome where the feature is browser-neutral (sync, shortcuts, popup size).
+
 ## 0.13.2 — 2026-10-01
 
 ### Added

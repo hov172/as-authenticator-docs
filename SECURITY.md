@@ -14,7 +14,7 @@ Credit is given in the changelog unless you ask otherwise.
 
 ## Scope
 
-In scope: the extension as shipped, its build, and the vault format described in
+In scope: everything under `src/`, `popup/`, `manifest.json`, the build in `build.sh`, and the vault format described in
 `docs/VAULT-FORMAT.md`.
 
 Out of scope: the vendored `vendor/jsQR.js` and `vendor/hash-wasm-argon2.js` (report upstream), Chrome itself, and attacks that need the user's unlocked browser profile or machine, which the threat model already concedes
