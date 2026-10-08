@@ -39,8 +39,9 @@ visible tab or the region you drag to decode the code; when you choose to fill a
 login field on that page. It does not run on pages otherwise, has no access to other tabs, and keeps no browsing
 history. Account icons are described above under "What leaves your device".
 
-When you click "Scan the copied QR code" on the Add tab (Chrome, Edge, Brave, Firefox), the extension reads the image on
-your clipboard once to decode it, on this device. Pasting with Ctrl+V or ⌘V works the same way in every browser. The
+When you click "Scan the copied QR code" on the Add tab, the extension reads the image on your clipboard once to decode
+it, on this device (in Safari the AS Authenticator app reads the pasteboard for the extension, since Safari gives
+extensions no clipboard permission). Pasting with Ctrl+V or ⌘V works the same way in every browser. The
 clipboard is not read at any other time.
 
 ## Your choices
