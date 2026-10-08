@@ -28,8 +28,8 @@ account system.
 - Account icons: when an account has no icon of its own and no bundled brand mark matches, the popup loads
   `https://<site>/favicon.ico` from the account's own site (and, failing that, from the site's parent domain) as an
   ordinary image request. That site learns only what any page load tells it: your IP address and that an icon was
-  requested. No third-party icon service is used, and the request happens only while the popup is open. In Chrome and
-  Edge, when the site serves no icon, the browser's local favicon cache is consulted, which never contacts the web.
+  requested. No third-party icon service is used, and the request happens only while the popup is open. In Chrome,
+  Edge and Brave, when the site serves no icon, the browser's local favicon cache is consulted, which never contacts the web.
 - Exported backup files are written where you choose and stay encrypted under your master password.
 
 ## What the extension reads on web pages
