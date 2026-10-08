@@ -33,7 +33,7 @@ more.
 ## The document inside
 
 ```json
-{ "Version": 4, "Collection": [ <account> ], "GlobalCategories": [ <category> ] }
+{ "Version": 4, "Revision": <n>, "RecoveryDigest": "<sha-256 hex>", "Collection": [ <account> ], "GlobalCategories": [ <category> ] }
 ```
 
 An account: `Label`, `Issuer`, `SecretByteArray` (base64 of the raw key bytes), `TotpSize` (6 to 8), `Period`
@@ -41,7 +41,8 @@ An account: `Label`, `Issuer`, `SecretByteArray` (base64 of the raw key bytes), 
 `IsFavourite` (pinned), optional `Icon` (a PNG data URL of at most 16 KB chosen by the user), optional `Site` (the account's website as a hostname, used for the icon, the Suggested marker
 and the fill shortcut), and `SelectedCategories`, a list of category copies matched by `Guid`. A category has `Guid`,
 `Name`, `UnicodeString` and `UnicodeIndex` (an icon id from the fixed set in `src/categories.js`). The inner `Version`
-is historical and not used for anything.
+is historical and not used for anything. `Revision` counts writes and decides which synced copy is newer (since 0.13.1);
+`RecoveryDigest` is the SHA-256 of the recovery envelope the vault vouches for. Both are optional on import.
 
 Imported files are validated field by field before they replace the vault (`assertModel`), and are re-encrypted under
 the current master password.
