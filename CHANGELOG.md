@@ -2,6 +2,8 @@
 
 ## 0.14.3 — 2026-10-07
 
+Submitted on 2026-10-07 to addons.mozilla.org (listed version 6553386, publish workflow) and to the Mac App Store as build 21 (a new version, since Apple had approved 0.14.2 by then). Chrome Web Store: 0.14.2 had been approved and was published (unlisted) on 2026-10-07; 0.14.3 was then uploaded by hand with the clipboardRead justification and submitted for review the same night.
+
 ### Added
 - Scan the copied QR code: right-click a QR code on any page, choose Copy image, open the extension and click the Add tab's "Scan the copied QR code" tile, or press Ctrl+V (⌘V on a Mac). The image is decoded the same way as a scanned file. The click needs the `clipboardRead` permission, so Chrome and Firefox ask existing users to approve the update once, and those two store listings show a clipboard warning. Safari refuses clipboard reads from a popup even with the permission, so its manifest leaves the permission out and the button there points to ⌘V.
 
