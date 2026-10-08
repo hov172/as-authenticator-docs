@@ -47,7 +47,7 @@ and the vendored hash-wasm Argon2 build is the unmodified 4.12.0 npm release (`d
   the screen locks or the computer idles, so it can lock the vault. The content security policy allows
   WebAssembly (`wasm-unsafe-eval`) solely for the vendored Argon2id build; scripts remain `'self'` only. The `offscreen` and `clipboardWrite`
   permissions exist only to replace the clipboard with a blank after a copied code's grace period; nothing reads it except the
-  `clipboardRead` permission (Chrome, Edge, Brave, Firefox; not Safari), which the Add tab's "Scan the copied QR code" tile uses once per click to decode a copied QR image locally.
+  `clipboardRead` permission (Chrome, Edge, Brave, Firefox), which the Add tab's "Scan the copied QR code" tile uses once per click to decode a copied QR image locally. Safari has no such permission: there the same click asks the host app's extension handler, over `nativeMessaging`, for the pasteboard image; the handler answers that one message only.
 - No network request of its own except a GET to timeapi.io when "Check the clock" is on, and, for account icons with no
   bundled brand mark, an HTTPS image load of `favicon.ico` from the account's own host, then its registrable domain (no icon service).
   With "Sync across your browsers" on, also off by default, the browser's own sync (Chrome sync or Firefox Sync) carries the
