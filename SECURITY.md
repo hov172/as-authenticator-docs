@@ -14,7 +14,7 @@ Credit is given in the changelog unless you ask otherwise.
 
 ## Scope
 
-In scope: everything under `src/`, `popup/`, `manifest.json` and the derived manifests in `tools/manifests.mjs`, the build in `build.sh`, and the vault format described in
+In scope: everything under `src/`, `popup/`, `manifest.json` and the derived manifests in `tools/manifests.mjs`, the build in `build.sh`, the Safari host-app extension handler written by `tools/safari-xcode.sh` (`SafariWebExtensionHandler.swift`), and the vault format described in
 `docs/VAULT-FORMAT.md`.
 
 Out of scope: the vendored `vendor/jsQR.js` and `vendor/hash-wasm-argon2.js` (report upstream), the browsers themselves (Chrome, Edge, Brave, Firefox, Safari), and attacks that need the user's unlocked browser profile or machine, which the threat model already concedes
@@ -22,7 +22,7 @@ Out of scope: the vendored `vendor/jsQR.js` and `vendor/hash-wasm-argon2.js` (re
 
 ## Continuous integration
 
-`.github/workflows/ci.yml` runs the unit and end-to-end suites in real Chrome on every push and pull request. On a
+`.github/workflows/ci.yml` runs the unit and end-to-end suites in real Chrome on every push to `main`, every `v*` tag and every pull request. On a
 `v*` tag it builds twice, fails unless the two hash files are identical, and publishes the three zips (Chromium, Firefox, Safari) and their hash files as a
 GitHub release using the runner's own `gh`, with no third-party release action. Every action is pinned by commit.
 
