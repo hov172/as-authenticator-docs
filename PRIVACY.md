@@ -12,7 +12,7 @@ does with data. In short: everything stays on your device, and the developer rec
   choose it.
 - While unlocked, the master password is held in the browser's memory-only session storage so the extension can stay
   unlocked between uses. It is cleared when you lock, when the screen locks, after the idle time you choose, and when
-  the browser closes.
+  the browser closes (Safari has no idle API: there, on lock, auto-lock and browser close only).
 - Optional: a password hint you write, shown on the lock screen, and a recovery code envelope.
 
 ## What leaves your device
@@ -39,6 +39,10 @@ visible tab or the region you drag to decode the code; when you choose to fill a
 login field on that page. It does not run on pages otherwise, has no access to other tabs, and keeps no browsing
 history. Account icons are described above under "What leaves your device".
 
+When you click "Scan the copied QR code" on the Add tab (Chrome, Edge, Brave, Firefox), the extension reads the image on
+your clipboard once to decode it, on this device. Pasting with Ctrl+V or ⌘V works the same way in every browser. The
+clipboard is not read at any other time.
+
 ## Your choices
 
 You can export, delete or reset the vault at any time from the extension. Removing the extension deletes everything it
@@ -48,4 +52,4 @@ stored on the device. Browser sync data, if enabled, is removed when the option 
 
 ayala.solutions@gmail.com. Security reports: see SECURITY.md in the repository.
 
-Last updated: 2026-10-03 (account icons may be fetched from the account's own site).
+Last updated: 2026-10-07 (reading a copied QR image from the clipboard on a click).
