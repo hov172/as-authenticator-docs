@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.14.3 — 2026-10-07
+
+### Added
+- Scan the copied QR code: right-click a QR code on any page, choose Copy image, open the extension and click the Add tab's "Scan the copied QR code" tile, or press Ctrl+V (⌘V on a Mac). The image is decoded the same way as a scanned file. The click needs the `clipboardRead` permission, so Chrome and Firefox ask existing users to approve the update once, and those two store listings show a clipboard warning. Safari refuses clipboard reads from a popup even with the permission, so its manifest leaves the permission out and the button there points to ⌘V.
+
+### Fixed
+- Firefox: "Scan an image", "Import vault" and "Import from another app" did nothing, because Firefox closes a toolbar popup the moment a native file picker opens (Mozilla bug 1292701, open since 2016) and the chosen file never reached it. In Firefox those three now open the popup page in a tab at the same view, where the picker works; Chrome, Edge, Brave and Safari are unchanged.
+
 ## 0.14.2 — 2026-10-03
 
 Submitted to the Mac App Store on 2026-10-03 as build 19 (the 0.14.1 submission had been rejected; the version was renamed and resubmitted), and to addons.mozilla.org as listed version 0.14.2 (id 6537058) through the publish workflow, whose action pins had to be corrected first; approved and public on addons.mozilla.org on 2026-10-06. Chrome Web Store: 0.14.2 uploaded by hand on 2026-10-03 and submitted for review (the pending 0.14.1 review had to be cancelled first). Apple's 0.14.1 rejection was Guideline 2.1, "unable to locate extension in Safari"; build 20 replaces build 19 with a container-app window that lists the three steps (open Safari Settings, tick the extension, click the toolbar icon) instead of the converter's one-line hint, and the review notes spell out the same steps with a test secret.
