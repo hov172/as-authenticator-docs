@@ -2,7 +2,7 @@
 
 ## 0.14.4 — 2026-10-10
 
-Toolbar icons only; no code change. Submitted on 2026-10-10 to addons.mozilla.org through the publish workflow, to the Chrome Web Store by hand (the dashboard refused to submit until the privacy policy link was changed to the raw GitHub file, since GitHub's blob pages now answer 503 to its checker), and to the Mac App Store as version 0.14.4, build 29 (review submission 13872bdc). Apple had approved 0.14.3 (build 23) by 2026-10-10.
+Toolbar icons only; no code change. Submitted on 2026-10-10 to addons.mozilla.org through the publish workflow, to the Chrome Web Store by hand (the dashboard refused to submit until the privacy policy link was changed to the raw GitHub file, since GitHub's blob pages now answer 503 to its checker), and to the Mac App Store as version 0.14.4, build 29 (review submission 13872bdc). Apple had approved 0.14.3 (build 23) by 2026-10-10. addons.mozilla.org approved 0.14.4 the same afternoon. Edge Add-ons: first submission ever, 0.14.4 (the Chrome package) through Partner Center on 2026-10-10 with listings in all five packaged languages, each with its own description; in review.
 
 ### Fixed
 - Safari: the toolbar icon was the colour logo on its opaque navy background, which Safari drew as a dark square next to the grey glyphs of other extensions. The Safari build now ships a single-colour glyph with alpha (a filled rounded square with the AS letterform cut out, without the circuit dots that smeared at 16 px), which Safari tints itself for light mode, dark mode, hover and inactive windows. The glyphs are in the Safari package only.
