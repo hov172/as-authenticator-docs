@@ -26,8 +26,13 @@ ships with a SHA-256 for each packaged file, listed in the changelog's release n
 
 ## Where to get it
 
-Version 0.14.1 was submitted on 2026-10-02 to the Chrome Web Store (also for Edge and Brave), to addons.mozilla.org for
-Firefox and to the Mac App Store for Safari, and is under review at each. Links appear here once the listings are live.
+Version 0.14.3 is live on all three stores:
+
+- Chrome, Edge and Brave: [Chrome Web Store](https://chromewebstore.google.com/detail/as-authenticator/dbpnmcknkbkphpadmgifjmnmgpknfjec)
+- Firefox: [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/as-authenticator/)
+- Safari: [Mac App Store](https://apps.apple.com/us/app/as-authenticator/id6818379710?mt=12) (the app only turns the extension on in Safari)
+
+Version 0.14.4, which changes toolbar icons only, was submitted to all three on 2026-10-10 and is under review.
 
 ## Documents
 
@@ -36,7 +41,7 @@ Firefox and to the Mac App Store for Safari, and is under review at each. Links 
 | [PRIVACY.md](PRIVACY.md) | What the extension stores, what leaves your device, and your choices. |
 | [SECURITY.md](SECURITY.md) | How to report a vulnerability, scope, and how to verify a release. |
 | [docs/VAULT-FORMAT.md](docs/VAULT-FORMAT.md) | The encrypted vault format. |
-| [docs/security-audit-report-2026-09-30.md](docs/security-audit-report-2026-09-30.md) | The security audit: every finding, fix and accepted risk, across eleven review passes and an adversarial design review. |
+| [docs/security-audit-report-2026-09-30.md](docs/security-audit-report-2026-09-30.md) | The security audit: every finding, fix and accepted risk, across twelve review passes and an adversarial design review, through 0.14.4. |
 | [CHANGELOG.md](CHANGELOG.md) | Release notes. |
 
 ## Support
