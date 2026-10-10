@@ -1,8 +1,18 @@
 # Changelog
 
+## 0.14.4 — 2026-10-10
+
+Toolbar icons only; no code change. Submitted on 2026-10-10 to addons.mozilla.org through the publish workflow, to the Chrome Web Store by hand (the dashboard refused to submit until the privacy policy link was changed to the raw GitHub file, since GitHub's blob pages now answer 503 to its checker), and to the Mac App Store as version 0.14.4, build 29 (review submission 13872bdc). Apple had approved 0.14.3 (build 23) by 2026-10-10.
+
+### Fixed
+- Safari: the toolbar icon was the colour logo on its opaque navy background, which Safari drew as a dark square next to the grey glyphs of other extensions. The Safari build now ships a single-colour glyph with alpha (a filled rounded square with the AS letterform cut out, without the circuit dots that smeared at 16 px), which Safari tints itself for light mode, dark mode, hover and inactive windows. The glyphs are in the Safari package only.
+
+### Changed
+- Chrome, Edge, Brave and Firefox: the 16 and 32 px toolbar icons are cut from the logo master around the letters instead of scaling the whole logo with its margin, so the AS is about twice as large in the same square. The 48 and 128 px listing icons are unchanged.
+
 ## 0.14.3 — 2026-10-07
 
-Submitted on 2026-10-07 to addons.mozilla.org (listed version 6553386, publish workflow; approved and public the same night) and to the Mac App Store (a new version, since Apple had approved 0.14.2 by then; build 21, then build 22 with the Safari pasteboard bridge, then build 23 with its empty-clipboard message fixed, waiting for review). Chrome Web Store: 0.14.2 had been approved and was published (unlisted) on 2026-10-07; 0.14.3 was then uploaded by hand with the clipboardRead justification and submitted for review the same night.
+Submitted on 2026-10-07 to addons.mozilla.org (listed version 6553386, publish workflow; approved and public the same night) and to the Mac App Store (a new version, since Apple had approved 0.14.2 by then; build 21, then build 22 with the Safari pasteboard bridge, then build 23 with its empty-clipboard message fixed, waiting for review). Chrome Web Store: 0.14.2 had been approved and was published (unlisted) on 2026-10-07; 0.14.3 was then uploaded by hand with the clipboardRead justification and submitted for review the same night; approved and published (unlisted) on 2026-10-08.
 
 ### Added
 - Scan the copied QR code: right-click a QR code on any page, choose Copy image, open the extension and click the Add tab's "Scan the copied QR code" tile, or press Ctrl+V (⌘V on a Mac). The image is decoded the same way as a scanned file. The click needs the `clipboardRead` permission, so Chrome and Firefox ask existing users to approve the update once, and those two store listings show a clipboard warning. Safari has no clipboardRead permission and refuses clipboard reads from a popup, so there the button asks the AS Authenticator app's extension handler for the pasteboard image over nativeMessaging (Mac App Store build 23); ⌘V works there too.
